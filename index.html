@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Calculator</title>
+<title>Elisha Calculator</title>
 <style>
 :root{--bg:#0a1230;--key:#162350;--fg:#f2f2f2;--ac:#2f80ff}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .app{max-width:480px;margin:0 auto;height:100vh;height:100dvh;display:flex;flex-direction:column;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.title{margin:0;padding:calc(6px + env(safe-area-inset-top,0px)) 8px 0;text-align:center;font-family:"Times New Roman",Times,serif;font-size:34px;font-weight:700;letter-spacing:1px}
+.credit{text-align:center;font-size:12px;opacity:.5;margin-top:12px}
 .disp{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;padding:8px 8px 20px;overflow:hidden}
 .expr{color:#8d9bc7;font-size:22px;min-height:28px;word-break:break-all;text-align:right}
 .res{font-size:64px;font-weight:600;line-height:1.1;word-break:break-all;text-align:right}
@@ -21,6 +23,7 @@ button:active{filter:brightness(1.5)}
 </head>
 <body>
 <div class="app">
+  <h1 class="title">Elisha</h1>
   <div class="disp"><div class="expr" id="expr"></div><div class="res" id="res">0</div></div>
   <div class="pad" id="pad">
     <button class="o" data-k="AC">AC</button>
@@ -38,6 +41,7 @@ button:active{filter:brightness(1.5)}
     <button data-k=".">.</button>
     <button class="eq" data-k="=">=</button>
   </div>
+  <div class="credit">made by @fxrcn</div>
 </div>
 <script>
 var s="",done=false,expr=document.getElementById("expr"),res=document.getElementById("res");
